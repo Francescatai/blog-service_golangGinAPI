@@ -7,9 +7,17 @@ Server:
 App:
   DefaultPageSize: 10
   MaxPageSize: 100
+  DefaultContextTimeout: 60
   LogSavePath: storage/logs
   LogFileName: app
   LogFileExt: .log
+  UploadSavePath: storage/uploads 
+  UploadServerUrl: http://127.0.0.1:8000/static
+  UploadImageMaxSize: 5  # MB
+  UploadImageAllowExts:
+    - .jpg
+    - .jpeg
+    - .png
 
 Database:
   DBType: mysql
@@ -22,3 +30,18 @@ Database:
   ParseTime: True
   MaxIdleConns: 10
   MaxOpenConns: 30
+
+  JWT:
+  Secret: test
+  Issuer: blog-service
+  Expire: 7200
+
+  Email:
+  Host: smtp.gmail.com
+  Port: 465
+  UserName: xxxx@gmail.com
+  Password: xxxxxxxx
+  IsSSL: true
+  From: xxxx@gmail.com
+  To:
+    - xxxx@gmail.com
